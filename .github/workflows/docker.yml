@@ -1,0 +1,21 @@
+name: ckc
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Install dependencies
+      run: |
+        mkdir data && chmod 0755 data
+    - name: Build the Docker image
+      run: docker run -d -p 8088:80 -p 8080:8080 -p 5900:5900 -v ${PWD}/data:/checkchan/data -e API_KEY=TEST_TEST  -e VDEBUG=OFF -e VNC=OFF -e SNAP_URL_BASE=http://localhost:8088  -e CKC_PASSWD=123 -e TZ=Asia/Chongqing easychen/checkchan:latest
