@@ -5,13 +5,13 @@ services:
     volumes:
       - "./data:/checkchan/data"
     environment:
-      - "CKC_PASSWD=123"
+      - "CKC_PASSWD=TEST_TEST"
       - "VDEBUG=OFF"
       - "VNC=OFF"
       #- "WIN_WIDTH=414"
       #- "WIN_HEIGHT=896"
       #- "XVFB_WHD=500x896x16"
-      - "API_KEY=aPiKe1"
+      - "API_KEY=TEST_TEST"
       - "ERROR_IMAGE=NORMAL" # NONE,NORMAL,FULL
       #- "SNAP_URL_BASE=http://..."
       #- "SNAP_FULL=1"
